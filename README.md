@@ -9,7 +9,8 @@
 ## Quarter 1 Activities
 
 ### 1. Chinese Zodiac Program
-- **File:** [zodiacMagnesiumIglesia.md](Quarter%201/zodiacMagnesiumIglesia.md)
+- **Documentation:** [zodiacMagnesiumIglesia.md](Quarter%201/zodiacMagnesiumIglesia.md)
+- **Code:** [zodiacMagnesiumIglesia.py](Quarter%201/zodiacMagnesiumIglesia.py)
 - **Description:** A Python program that asks for a birth year and returns the corresponding Chinese zodiac sign.
 
 ### 2. Computational Thinking Exercise
