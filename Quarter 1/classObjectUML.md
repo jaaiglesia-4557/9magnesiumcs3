@@ -41,7 +41,7 @@
 | MillionDollars_TotalRevenue : float |
 | MillionDollars_TotalExpenses : float |
 | Break_even : boolean |
-| EmployeeNumbers: string |
+| EmployeeNumbers: integer |
 +------------------------------------------+
 | Display_CompanyInformation() |
 | Change_profit(MillionDollarProfits : float) |
@@ -51,3 +51,21 @@
 ### Why did you choose this class? - I chose this class because I want to share what are the hidden information that routinely changes in a logistics transport company that makes sure our packages reaches their destination and to give you a clearer perspective on its "behind the scenes"
 ### Which property is the most important? Why? - The property most important for the company is the ActivityStatus, but if we're talking about for this CS subject application, it would be the MillionDollarProfits and AvailableDispatchUnits because they are more widely used for methods are the most significant in operating logistics companies
 ### Which method is the most useful? Why? - Display_CompanyInformation() because it gives all of the information you may need about a logistics company right away
+
+## Design Revision - Changes from previous design: replaced the data type of EmployeeNumbers from string to integer
+| Property | Data Type | Visibility | Why Public/Private? |
+|---|---|---|---|
+|LogisticsVehicleType |string |Public |Accesed often for dispatch operations|
+|FleetSize|integer |Private |Should only be modified through methods|
+|TransportDurationHours|float |Public |Used frequently for calculations|
+|AvailableDispatchUnits |integer |Private |Must be updated via Update_FleetStatus()|
+|UnitsUnderMaintenance |integer |Private |Must be updated via Update_FleetStatus()|
+|DispatchReliabilityPercentage |float |Positive |Read-only for Reports|
+|CompanyName |string |Positive |Frequently displayed|
+|IndustryType |string |Positive |Read-only identifier|
+|ActivityStatus |boolean |Positive |Checked often for operations|
+|MillionDollarProfits |float |Private |Modified only through Change_profit()|
+|MillionDollars_TotalRevenue |float |Private |Modified through Change_profit()|
+|MillionDollars_TotalExpenses |float |Private |Modified through Change_profit()|
+|Break_even|float |Private |Calculated internally|
+|EmployeeNumbers |integer |Public |Displayed in company info|
