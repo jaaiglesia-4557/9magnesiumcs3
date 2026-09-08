@@ -69,3 +69,27 @@
 |MillionDollars_TotalExpenses |float |Private |Modified through Change_profit()|
 |Break_even|float |Private |Calculated internally|
 |EmployeeNumbers |integer |Public |Displayed in company info|
+
+## Revised class diagram
++------------------------------------------+
+| LogisticsCompany |
++------------------------------------------+
+| + LogisticsVehicleType : string |
+| - FleetSize : integer |
+| + TransportDurationHours : float |
+| - AvailableDispatchUnits : integer |
+| - UnitsUnderMaintenance : integer |
+| + DispatchReliabilityPercentage : float |
+| + CompanyName : string |
+| + IndustryType : string |
+| + ActivityStatus : boolean |
+| - MillionDollarProfits : float |
+| - MillionDollars_TotalRevenue : float |
+| - MillionDollars_TotalExpenses : float |
+| - Break_even : boolean |
+| + EmployeeNumbers: integer |
++------------------------------------------+
+| + Display_CompanyInformation() |
+| + Change_profit(MillionDollarProfits : float) |
+| + Update_FleetStatus(AvailableDispatchUnits : integer, UnitsUnderMaintenance : integer) |
++------------------------------------------+
