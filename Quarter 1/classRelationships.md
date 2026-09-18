@@ -23,7 +23,7 @@ LogisticsCompany contains LogisticsVehicle
 
 # Step 4
 
-LogisticsCompany ───────── 1..*
+LogisticsCompany ───────── 1..*LogisticsVehicle
 
 ## 1. Multiplicity
 One or more
@@ -65,14 +65,17 @@ This multiplicty fits my system because my class, Logistics company, can have on
 | + ActualWeight: integer |
 | - SetSpeedLimiter: integer |
 | - FuelCapacity: float |
+| - LitersofActualFuel: float |
 | - Mileage: float |
 | + YearsofLifespan: integer |
 | - TransportCyclesperWeek: integer |
 | + MilesTravelled: integer |
+| + VehicleNumberCode: integer |
+| + Odometer: integer |
 +-------------------------+
 | + displayInfo() |
-| + displayInfo() |
-| + displayInfo() |
+| + Update_Odometer(Odometer, MilesTravelled) |
+| + Update_RemainingFuel(LitersofActualFuel, Mileage, MilesTravelled) |
 +-------------------------+
 
 
