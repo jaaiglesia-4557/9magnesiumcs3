@@ -14,7 +14,7 @@ The attributes and methods which will still be useful in interactions between my
 ## 1. New class name?
 LogisticsVehicle
 ## 2. Description
-A new class I made, named LogisticsVehicle, which technically is a subclass of my original class, would focus more on the mechanical components of a working logistics company. This zooms in on the vehicle types, the maintenance and repair history, the maximum net weight, and many other details specifically for vehicles.
+A new class I made, named LogisticsVehicle, is a related subclass of my original class, would focus more on the mechanical components of a working logistics company. This zooms in on the vehicle types, the maintenance and repair history, the maximum net weight, and many other details specifically for vehicles.
 ## 3. Why should these two class be connected?
 As I've mentioned in no.2, my new class is well-connected to my original class as its a fundamental part of the LogisticsCompany class. Without logistics vehicles, the logistics company would cease to exist.
 
@@ -54,7 +54,7 @@ This multiplicty fits my system because my class, Logistics company, can have on
 +-------------------------+
 1
 |
-| contains
+| has
 |
 1..*
 +-------------------------+
@@ -78,5 +78,23 @@ This multiplicty fits my system because my class, Logistics company, can have on
 | + Update_RemainingFuel(LitersofActualFuel, Mileage, MilesTravelled) |
 +-------------------------+
 
+# Step 13
+## 1. What is the association between your two classes? Explain the relationship using your actual system.
 
+The association between my two classes is a "has-a" relationship, where LogisticsCompany contains LogisticsVehicle. This means a logistics company owns, manages, and keeps track of the vehicles that carry out its delivery operations. Without vehicles, the company cannot function, so the relationship is essential to the system rather than optional. In my Python code, this is represented by the vehicles list inside LogisticsCompany that stores LogisticsVehicle objects.
 
+## 2. What multiplicity did you choose, and why? Explain why 1:1, 1:0..*, or another multiplicity is appropriate.
+
+I chose 1..* (one-to-many), meaning one LogisticsCompany can have one or more LogisticsVehicle objects. This fits my system because a functioning logistics company would realistically need multiple vehicles — at least one to operate, and more as it grows. A 1:1 relationship would not make sense because a company with only one vehicle would be severely limited. A 1:0..* would also work, but 1..* better reflects the real-world requirement that a logistics company must have at least one vehicle to operate.
+
+## 3.  How did you implement the relationship in Python? Identify which attribute stores the related object or objects.
+
+I implemented the relationship by adding an instance attribute called self.vehicles = [] inside the LogisticsCompany.__init__() method. This list stores the LogisticsVehicle objects that belong to the company. I also added a method called add_vehicle(self, vehicle) that appends a vehicle object into that list. So the attribute that stores the related objects is self.vehicles.
+
+## 4. Why did you store an object reference instead of copying its data? Use one example from your implementation.
+
+I stored an object reference instead of copying its data because the relationship should exist between the actual objects, not between duplicated values. If I stored only the VehicleNumberCode as a string or number, the company would lose access to all the other attributes and methods of that vehicle, such as Odometer, FuelCapacity, or displayInfo(). For example, when I call company.display_all_vehicles(), the method loops through the vehicles list and calls vehicle.displayInfo() on each object — this only works because the list contains the actual objects, not just their names. Storing references also means that if a vehicle's data is updated later, the company automatically sees the updated version.
+
+## 5. If your relationship uses "many," why is a list appropriate? Explain what the list actually contains.
+
+A list is appropriate for my "many" relationship because LogisticsCompany needs to hold an unknown, growing number of LogisticsVehicle objects. A list can be appended to at any time using append(), so new vehicles can be added without changing the structure of the class. In my implementation, self.vehicles contains actual LogisticsVehicle object references — not strings or numbers — such as vehicle1, vehicle2, and vehicle3 with codes 101, 102, and 103. This makes the system flexible and scalable, since the company can manage any number of vehicles.

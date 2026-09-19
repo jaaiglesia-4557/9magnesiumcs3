@@ -24,7 +24,9 @@ class LogisticsCompany:
         self.__MillionDollars_TotalRevenue = MillionDollars_TotalRevenue
         self.__MillionDollars_TotalExpenses = MillionDollars_TotalExpenses
         self.__Break_even = Break_even
-    
+        
+#Step 5 (Implementing of methods)
+    #Reads/returns information, interacts with private attributes    
     # Methods
     def Display_CompanyInformation(self):
         print("=== COMPANY INFORMATION ===")
@@ -50,8 +52,7 @@ class LogisticsCompany:
     def Update_FleetStatus(self, AvailableDispatchUnits, UnitsUnderMaintenance):
         self.__AvailableDispatchUnits = AvailableDispatchUnits
         self.__UnitsUnderMaintenance = UnitsUnderMaintenance
-#Step 5 (Implementing of methods)
-    #Reads/returns information, interacts with private attributes
+
     def Display_CompanyInformation(self):
             print("=== COMPANY INFORMATION ===")
             print(f"Company Name: {self.companyName}")
