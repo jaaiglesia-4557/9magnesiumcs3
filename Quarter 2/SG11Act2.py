@@ -20,3 +20,5 @@ Vehicles = [Car(), Boat(), Drone()]
 for vehicle in Vehicles:
   start_trip(vehicle)
 
+# No. 3
+## The code demonstrated polymorphism the printed output of the move() function from each class were different from each other, which all resulted fro the start_trip() method.
